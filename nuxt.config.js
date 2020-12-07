@@ -31,8 +31,8 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'}
     ],
     bodyAttrs: {
-      class: '' // Add `white-content` class here to enable "white" mode.
-    }
+  class: 'sidebar-mini' // delete the class to have the sidebar expanded by default. Add `white-content` class here to enable "white" mode.
+      // Add `white-content` class here to enable "white" mode.
   },
   router: {
     linkExactActiveClass: 'active'
@@ -53,7 +53,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    `~/plugins/dashboard-plugin.js`
+    `~/plugins/dashboard-plugin.js`,
+  { src: '~/plugins/full-calendar.js', ssr: false },
+  { src: '~/plugins/world-map.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
